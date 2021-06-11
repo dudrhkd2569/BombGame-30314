@@ -7,24 +7,18 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     public bool isGameover = false;
     public Text scoreText;
     public GameObject gameoverUI;
     private int score = 0;
-
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        if (instance == null) instance = this;
         else
         {
-            Debug.LogWarning("두 개 이상의 게임 매니저가 존재합니다!");
+            Debug.LogWarning("두 개 이상의 게임매니저가 존재합니다!");
             Destroy(gameObject);
         }
-
     }
 
     void Update()
@@ -37,17 +31,22 @@ public class GameManager : MonoBehaviour
         {
             Application.Quit();
         }
+
     }
+
     public void AddScore(int newScore)
     {
-        score += newScore; if (score < 0)
+        score += newScore;
+        if(score < 0)
         {
             OnPlayerDead();
         }
         scoreText.text = "Score : " + score;
     }
+
     public void OnPlayerDead()
     {
-        isGameover = true; gameoverUI.SetActive(true);
+        isGameover = true;
+        gameoverUI.SetActive(true);
     }
 }

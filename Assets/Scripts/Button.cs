@@ -7,7 +7,7 @@ public class Button : MonoBehaviour
 {
     public void Reset()
     {
-        SceneManager.LoadScene("Desert");
+        SceneManager.LoadScene("race_track");
     }
 
     public void Quit()

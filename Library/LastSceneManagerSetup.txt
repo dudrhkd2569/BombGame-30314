@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Desert.unity
+- path: Assets/race-track-lake/race_track.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
